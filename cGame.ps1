@@ -1,10 +1,31 @@
 # Blackwood Mansion Clue Game
+$splash = @"
+                 ..';:cc::;,..        .x;;'''.;,                    .;;;;,            .''''''.
+              'codlc;,,,,;:loxxc'     ,d;     xl .               .'kk.;;;.lk,        cx,....,o'
+           .:ol,.           ..':xkl.  ,x;     xl .               .'ko.  ..lk,        cO.    'o'
+         .cd:.        ...       .xoOl.,x;     xo..               .'Ok.  ..lO,        lO.    'd'
+        .dc.     .,:oodddxdl;.xxx     ,x:     xo..               .'OO.  ..lo,        lO.    'd'
+       .ol.     ,dl,......'ckOc       ,x:     ko..               .'OO.  ..lO,        l0.    ,d'
+       :x...  .lo                     ,k: .   kd..               .'OO.  ..lO,        co.    ,x'
+       dc.....ck'                     ,k: .  .kd..               .'OO.  ..lO,        co.    'x'
+       d:.....lO                      ,kc .  .kd..               .'OO.  ..lO,        lO.    'x'
+       co.    ,ko                     ,kc .  .ko..               .'Ok.  ..OO,        do.    'x,
+        o,     .ox;........klOx       ,x: .  .kd..               .'ok.  ..0O,        oo.    'x,
+        'o'.    .'colc::clddl'.xxx....'ko.....ko..........................oo.........oo;    'o'
+         .lc.       ..............xOx'.cx:.....;dddddllllooooooooooooooooooOxoooooooO.     ;d;
+           'cc'.              .'lkk;   ,ol'           .......................;Ox;O:      ,c;
+             .;ll;'........':okxc.       ,lo;                                          ;c'
+                ..,;:ccllllc:'.             .'',,,,,,,,,;;;;;;;;;;;;;;.::::::::::::::ll.
+"@
+
+# Display the Splash Page
+Write-Host $splash
 
 # Narrative Introduction
 $narrative = @"
 ### The Murder at Blackwood Manor
 
-In the opulent yet eerie Blackwood Manor, a lavish dinner party takes a sinister turn when the host, Mr. Blackwood, is found dead in the library. As the esteemed guests gather in shock, whispers of secrets and lies swirl around the estate. It’s up to you to uncover the truth behind his untimely demise and the dark family secret that haunts this grand manor.
+In the opulent yet eerie Blackwood Manor, a lavish dinner party takes a sinister turn when the host, Mr. Blackwood, is found dead in the library. As the esteemed guests gather in shock, whispers of secrets and lies swirl around the estate. It's up to you to uncover the truth behind his untimely demise and the dark family secret that haunts this grand manor.
 
 #### Characters:
 - Miss Scarlet: A cunning socialite known for her charm and seduction.
