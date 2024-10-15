@@ -1,8 +1,3 @@
-# Blackwood Mansion Clue Game
-#Taylor Metzger, Laura Stump, Scott Ressler, Frentzhermann Solidaire
-#10/16/24
-<#Welcome to a clue inspired game named CLU. Here you will enter a murder mystery world where you will be
-tasked to investigate suspects to solve a murder.#>
 $splash = @"
                  ..';:cc::;,..        .x;;'''.;,                    .;;;;,            .''''''.
               'codlc;,,,,;:loxxc'     ,d;     xl .               .'kk.;;;.lk,        cx,....,o'
