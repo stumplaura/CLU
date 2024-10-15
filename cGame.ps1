@@ -1,4 +1,5 @@
-#Blackwood Mansion Clue Game
+
+# Blackwood Mansion Clue Game
 #Taylor Metzger, Laura Stump, Scott Ressler, Frentzhermann Solidaire
 #10/16/24
 <#Welcome to a clue inspired game named CLU. Here you will enter a murder mystery world where you will be
@@ -94,15 +95,40 @@ $gameOver = $false
 # Game loop
 function loo {
 while (-not $gameOver) {
-    Write-Host "What would you like to do? (accuse, interrogate, review, exit)"
+    Write ""
+    Write "Actions:"
+    Write "(1) - Accuse"
+    Write "(2) - Interrogate"
+    Write "(3) - Review"
+    Write "(4) - Exit"
+    Write-Host "What would you like to do?"
     $action = Read-Host
 
     switch ($action.ToLower()) {
-        'accuse' {
+        # Prompt user to make accusation
+        1 {
             $attempts++
-            $accusedSuspect = Read-Host "Who do you think the murderer is? (Colonel Jack, Professor Kevin, Miss Morgan, Mr. John George, Mr. Neb, Mrs. Sam, Dr. Pavan, Former Dr. Gabe)"
-            $accusedRoom = Read-Host "Where do you think the murder took place? (Library, Kitchen, Ballroom, Conservatory, Dining Room, Hall)"
-            $accusedWeapon = Read-Host "What weapon do you think was used? (Candlestick, Poison, Lead Pipe, Revolver, Rope, Wrench)"
+            Write "Suspects:"
+            for ($i = 0; $i -lt 8; $i++){
+                $listNum = [int]$i+1
+                $susp = $suspects[$i]
+                Write-Host "($listNum) - $susp"
+            }
+            $accusedSuspect = Read-Host "Who do you think the murderer is?"
+            Write "Rooms:"
+            for ($j = 0; $j -lt 6; $j++){
+                $listNum = [int]$j+1
+                $rm = $rooms[$j]
+                Write-Host "($listNum) - $rm"
+            }
+            $accusedRoom = Read-Host "Where do you think the murder took place?"
+            Write "Weapons:"
+            for ($k = 0; $k -lt 6; $k++){
+                $listNum = [int]$k+1
+                $weap = $weapons[$k]
+                Write-Host "($listNum) - $weap"
+            }
+            $accusedWeapon = Read-Host "What weapon do you think was used?"
             
             # Check the accusation
             if ($accusedSuspect -eq $murderSuspect -and $accusedRoom -eq $murderRoom -and $accusedWeapon -eq $murderWeapon) {
@@ -113,31 +139,39 @@ while (-not $gameOver) {
                 Write-Host "Your accusation is incorrect. Try again!"
             }
         }
-        'interrogate' {
+        # List all suspects to interrogation
+        2 {
+            Write "Suspects:"
+            for ($m = 0; $m -lt 6; $m++){
+                $listNum = [int]$m+1
+                $susp = $suspects[$m]
+                Write-Host "($listNum) - $susp"
+            }
+            # Return corresponding alibi
             $suspect = Read-Host "Which suspect do you want to interrogate?"
             switch ($suspect.ToLower()) {
-                'colonel jack' {
+                1 {
                     Write-Host "Colonel Jack claims he was attending a dinner party."
                 }
-                'professor kevin' {
+                2 {
                     Write-Host "Professor Kevin asserts he was lost in thought in the library."
                 }
-                'miss morgan' {
+                3 {
                     Write-Host "Miss Morgan insists she was rehearsing lines for a play."
                 }
-                'mr. john george' {
+                4 {
                     Write-Host "Mr. John George states he was organizing the pantry."
                 }
-                'mr. neb' {
+                5 {
                     Write-Host "Mr. Neb says he was watering the plants in the atrium."
                 }
-                'mrs. sam' {
+                6 {
                     Write-Host "Mrs. Sam claims she was at a charity meeting, but her eyes dart nervously."
                 }
-                'dr. pavan' {
+                7 {
                     Write-Host "Dr. Pavan states he was reading in the laboratory."
                 }
-                'former dr. gabe' {
+                8 {
                     Write-Host "Former Dr. Gabe insists he was pouring himself another drink in the kitchen."
                 }
                 default {
@@ -145,7 +179,8 @@ while (-not $gameOver) {
                 }
             }
         }
-        'review' {
+        # Review option - lists all suspects, rooms, and weapons
+        3 {
             Write-Host "`nSuspect Names:"
             foreach ($name in $suspects){
                 Write-Host "$name"
@@ -163,7 +198,7 @@ while (-not $gameOver) {
 
             Write-Host "`n"
         }
-        'exit' {
+        4 {
             Write-Host "Thank you for playing!"
             $gameOver = $true # Set game status to over
         }
@@ -208,8 +243,9 @@ Write-Host "Thanks for playing!"
 }
 
 
-
+# main function calls
 function home {
+cls
 spl
 nar
 def
