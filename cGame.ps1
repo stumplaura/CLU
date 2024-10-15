@@ -211,7 +211,7 @@ while (-not $gameOver) {
 
 function end {
 # Game End Scenario
-Write-Host "As you confront $murderSuspect, they confess to the crime and explain their motive..."
+Write-Host "As you confront Mrs. Sam, they confess to the crime and explain their motive..."
 $narrative2 = @"
 Motives: 
    - The torn note found in Mr. Scott's pocket suggests that he was about to expose secrets that could ruin her 
