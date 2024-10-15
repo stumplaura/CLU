@@ -1,3 +1,8 @@
+<#Blackwood Mansion Clue Game
+Taylor Metzger, Laura Stump, Scott Ressler, Frentzhermann Solidaire
+10/16/24
+Welcome to a clue inspired game named CLU. Here you will enter a murder mystery world where you will
+be tasked to investigate suspects to solve a murder.#>
 $splash = @"
                  ..';:cc::;,..        .x;;'''.;,                    .;;;;,            .''''''.
               'codlc;,,,,;:loxxc'     ,d;     xl .               .'kk.;;;.lk,        cx,....,o'
@@ -23,10 +28,6 @@ Write-Host $splash
 # Narrative Introduction
 $narrative = @"
 ### The Murder at Blackwood Manor
-Blackwood Mansion Clue Game
-Taylor Metzger, Laura Stump, Scott Ressler, Frentzhermann Solidaire
-10/16/24
-Welcome to a clue inspired game named CLU. Here you will enter a murder mystery world where you will be tasked to investigate suspects to solve a murder.
 
 In the opulent yet eerie Blackwood Manor, a lavish dinner party takes a sinister turn when the host, Mr. Blackwood, is found dead in the library. As the esteemed guests gather in shock, whispers of secrets and lies swirl around the estate. It's up to you to uncover the truth behind his untimely demise and the dark family secret that haunts this grand manor.
 
