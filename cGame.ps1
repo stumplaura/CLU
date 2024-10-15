@@ -1,4 +1,5 @@
-﻿# Blackwood Mansion Clue Game
+
+# Blackwood Mansion Clue Game
 #Taylor Metzger, Laura Stump, Scott Ressler, Frentzhermann Solidaire
 #10/16/24
 <#Welcome to a clue inspired game named CLU. Here you will enter a murder mystery world where you will be
@@ -33,15 +34,17 @@ function nar {
 $narrative = @"
 ### The Murder at Blackwood Manor
 
-In the opulent yet eerie Blackwood Manor, a lavish dinner party takes a sinister turn when the host, Mr. Blackwood, is found dead in the library. As the esteemed guests gather in shock, whispers of secrets and lies swirl around the estate. It's up to you to uncover the truth behind his untimely demise and the dark family secret that haunts this grand manor.
+In the opulent yet eerie Blackwood Manor, a lavish dinner party takes a sinister turn when the host, Mr. Scott, is found dead in the library. As the esteemed guests gather in shock, whispers of secrets and lies swirl around the estate. It's up to you to uncover the truth behind his untimely demise and the dark family secret that haunts this grand manor.
 
 #### Characters:
-- Miss Scarlet: A cunning socialite known for her charm and seduction.
-- Professor Plum: A brilliant yet absent-minded scholar with a murky history.
-- Mrs. White: The enigmatic housekeeper, whose loyalty conceals knowledge of the manor’s deepest secrets.
-- Colonel Mustard: A retired military officer with a fiery temper and a shadowy past.
-- Mrs. Peacock: A wealthy widow skilled in manipulation, she harbors secrets that could change everything.
-- Mr. Green: A charming businessman whose smooth demeanor masks a web of deceit.
+- Miss Morgan: A cunning socialite known for her charm and seduction.
+- Professor Kevin: A brilliant yet absent-minded scholar with a murky history.
+- Mr. John George: The enigmatic housekeeper, whose loyalty conceals knowledge of the manor’s deepest secrets.
+- Colonel Jack: A retired military officer with a fiery temper and a shadowy past.
+- Mrs. Sam: A wealthy widow skilled in manipulation, she harbors secrets that could change everything.
+- Mr. Neb: A charming businessman whose smooth demeanor masks a web of deceit.
+- Dr. Pavan: A chemist who dedicates his lifes work to recerational distillary.
+- Former Dr. Gabe: An underground hobby-alchemist known for his potent elixirs.
 
 #### Clues:
 - A torn note found in Mr. Blackwood's pocket mentions a hidden family fortune.
@@ -59,20 +62,20 @@ Write-Host $narrative
 
 # Define suspects, rooms, and weapons
 function def {
-$global:suspects = @("Colonel Mustard", "Professor Plum", "Miss Scarlet", "Mrs. White", "Mr. Green", "Mrs. Peacock")
+$global:suspects = @("Colonel Jack", "Professor Kevin", "Miss Morgan", "Mr. John George", "Mr. Neb", "Mrs. Sam", "Dr. Pavan","Former Dr. Gabe")
 $global:rooms = @("Library", "Kitchen", "Ballroom", "Conservatory", "Dining Room", "Hall")
 $global:weapons = @("Candlestick", "Poison", "Lead Pipe", "Revolver", "Rope", "Wrench")
 }
 # Generate the murder scenario
 function mur {
-$global:murderSuspect = "Mrs. Peacock"
+$global:murderSuspect = "Mrs. Sam"
 $global:murderRoom = "Library"
 $global:murderWeapon = "Poison"
 }
 # Game clues
 function clu {
 $global:clues = @{
-    note = "A torn note found in Mr. Blackwood's pocket mentions a hidden family fortune." ;
+    note = "A torn note found in Mr. Scott's pocket mentions a hidden family fortune." ;
     journal = "A hidden journal in the safe behind a portrait details a scandal involving an illegitimate child." ;
     footprints = "Footprints leading to the library suggest someone was trying to cover their tracks.";
     window = "A broken window indicates a struggle, hinting at an insider's betrayal.";
@@ -106,7 +109,7 @@ while (-not $gameOver) {
         1 {
             $attempts++
             Write "Suspects:"
-            for ($i = 0; $i -lt 6; $i++){
+            for ($i = 0; $i -lt 8; $i++){
                 $listNum = [int]$i+1
                 $susp = $suspects[$i]
                 Write-Host "($listNum) - $susp"
@@ -148,22 +151,28 @@ while (-not $gameOver) {
             $suspect = Read-Host "Which suspect do you want to interrogate?"
             switch ($suspect.ToLower()) {
                 1 {
-                    Write-Host "Colonel Mustard claims he was attending a dinner party."
+                    Write-Host "Colonel Jack claims he was attending a dinner party."
                 }
                 2 {
-                    Write-Host "Professor Plum asserts he was lost in thought in the library."
+                    Write-Host "Professor Kevin asserts he was lost in thought in the library."
                 }
                 3 {
-                    Write-Host "Miss Scarlet insists she was rehearsing lines for a play."
+                    Write-Host "Miss Morgan insists she was rehearsing lines for a play."
                 }
                 4 {
-                    Write-Host "Mrs. White states she was organizing the pantry."
+                    Write-Host "Mr. John George states he was organizing the pantry."
                 }
                 5 {
-                    Write-Host "Mr. Green says he was watering the plants in the atrium."
+                    Write-Host "Mr. Neb says he was watering the plants in the atrium."
                 }
                 6 {
-                    Write-Host "Mrs. Peacock claims she was at a charity meeting, but her eyes dart nervously."
+                    Write-Host "Mrs. Sam claims she was at a charity meeting, but her eyes dart nervously."
+                }
+                7 {
+                    Write-Host "Dr. Pavan states he was reading in the laboratory."
+                }
+                8 {
+                    Write-Host "Former Dr. Gabe insists he was pouring himself another drink in the kitchen."
                 }
                 default {
                     Write-Host "Invalid suspect."
@@ -205,26 +214,26 @@ function end {
 Write-Host "As you confront $murderSuspect, they confess to the crime and explain their motive..."
 $narrative2 = @"
 Motives: 
-   - The torn note found in Mr. Blackwood's pocket suggests that he was about to expose secrets that could ruin her 
-   reputation and fortune. Mrs. Peacock had the most to lose from the revelation of the family's dark history involving 
+   - The torn note found in Mr. Scott's pocket suggests that he was about to expose secrets that could ruin her 
+   reputation and fortune. Mrs. Sam had the most to lose from the revelation of the family's dark history involving 
    the illegitimate child.
 
 Connections:
    - The Library Ledger reveals that an uninvited guest had a past connection to the family; this could tie back to 
-   Mrs. Peacock, who may have orchestrated the invitation of this individual to create a distraction or mislead the 
+   Mrs. Sam, who may have orchestrated the invitation of this individual to create a distraction or mislead the 
    investigation.
 
 The Poison:
-   - The rare poison found in Professor Plum's study connects to Mrs. Peacock as well. As a wealthy widow with means, 
+   - The rare poison found in Professor Kevin's study connects to Mrs. Sam as well. As a wealthy widow with means, 
    she could have easily acquired it and used it discreetly during the dinner.
 
 Behavior and Opportunity:
-   - Throughout the investigation, Mrs. Peacock's manipulative nature and charm raised suspicion. She often deflected 
-   questions and was seen in close proximity to Mr. Blackwood just before his death.
+   - Throughout the investigation, Mrs. Sam's manipulative nature and charm raised suspicion. She often deflected 
+   questions and was seen in close proximity to Mr. Scott just before his death.
 
 ### Final Accusation:
 As you piece together the evidence—especially the hidden journal detailing the illegitimate child and the threats tied to 
-the family fortune—Mrs. Peacock emerges as the prime suspect. Her desperate need to protect her status and wealth makes 
+the family fortune—Mrs. Sam emerges as the prime suspect. Her desperate need to protect her status and wealth makes 
 her the most plausible murderer, willing to go to any lengths to keep the family's secrets buried.
 "@
 Write-Host $narrative2
@@ -246,15 +255,5 @@ loo
 }
 
 home
-
-
-
-<# User Interface Enhancements
-Write-Host "Welcome to the Blackwood Mansion Murder Mystery!" -ForegroundColor Cyan
-
-# Add More Rooms and Weapons
-$rooms += "Observatory", "Garage"
-$weapons += "Poison", "Crossbow"#>
-
 
 #pwsh ./cgame.ps1 to run
