@@ -1,30 +1,34 @@
-<#Blackwood Mansion Clue Game
-Taylor Metzger, Laura Stump, Scott Ressler, Frentzhermann Solidaire
-10/16/24
-Welcome to a clue inspired game named CLU. Here you will enter a murder mystery world where you will
-be tasked to investigate suspects to solve a murder.#>
+# Blackwood Mansion Clue Game
+#Taylor Metzger, Laura Stump, Scott Ressler, Frentzhermann Solidaire
+#10/16/24
+<#Welcome to a clue inspired game named CLU. Here you will enter a murder mystery world where you will be
+tasked to investigate suspects to solve a murder.#>
+
+function spl {
 $splash = @"
-                 ..';:cc::;,..        .x;;'''.;,                    .;;;;,            .''''''.
-              'codlc;,,,,;:loxxc'     ,d;     xl .               .'kk.;;;.lk,        cx,....,o'
-           .:ol,.           ..':xkl.  ,x;     xl .               .'ko.  ..lk,        cO.    'o'
-         .cd:.        ...       .xoOl.,x;     xo..               .'Ok.  ..lO,        lO.    'd'
-        .dc.     .,:oodddxdl;.xxx     ,x:     xo..               .'OO.  ..lo,        lO.    'd'
-       .ol.     ,dl,......'ckOc       ,x:     ko..               .'OO.  ..lO,        l0.    ,d'
-       :x...  .lo                     ,k: .   kd..               .'OO.  ..lO,        co.    ,x'
-       dc.....ck'                     ,k: .  .kd..               .'OO.  ..lO,        co.    'x'
-       d:.....lO                      ,kc .  .kd..               .'OO.  ..lO,        lO.    'x'
-       co.    ,ko                     ,kc .  .ko..               .'Ok.  ..OO,        do.    'x,
-        o,     .ox;........klOx       ,x: .  .kd..               .'ok.  ..0O,        oo.    'x,
-        'o'.    .'colc::clddl'.xxx....'ko.....ko..........................oo.........oo;    'o'
-         .lc.       ..............xOx'.cx:.....;dddddllllooooooooooooooooooOxoooooooO.     ;d;
-           'cc'.              .'lkk;   ,ol'           .......................;Ox;O:      ,c;
-             .;ll;'........':okxc.       ,lo;                                          ;c'
-                ..,;:ccllllc:'.             .'',,,,,,,,,;;;;;;;;;;;;;;.::::::::::::::ll.
+                  ..';:cc::;,..        .x;;'''.;,                    .;;;;,            .''''''.
+               'codlc;,,,,;:loxxc'     ,d;     xl .               .'kk.;;;.lk,        cx,....,o'
+            .:ol,.           ..':xkl.  ,x;     xl .               .'ko.  ..lk,        cO.    'o'
+          .cd:.        ...       .xoOl.,x;     xo..               .'Ok.  ..lO,        lO.    'd'
+         .dc.     .,:oodddxdl;.xxx     ,x:     xo..               .'OO.  ..lo,        lO.    'd'
+        .ol.     ,dl,......'ckOc       ,x:     ko..               .'OO.  ..lO,        l0.    ,d'
+        :x...  .lo                     ,k: .   kd..               .'OO.  ..lO,        co.    ,x'
+        dc.....ck'                     ,k: .  .kd..               .'OO.  ..lO,        co.    'x'
+        d:.....lO                      ,kc .  .kd..               .'OO.  ..lO,        lO.    'x'
+        co.    ,ko                     ,kc .  .ko..               .'Ok.  ..OO,        do.    'x,
+         o,     .ox;........klOx       ,x: .  .kd..               .'ok.  ..0O,        oo.    'x,
+         'o'.    .'colc::clddl'.xxx....'ko.....ko..........................oo.........oo;    'o'
+           .lc.       ..............xOx'.cx:.....;dddddllllooooooooooooooooooOxoooooooO.     ;d;
+            'cc'.              .'lkk;   ,ol'           .......................;Ox;O:      ,c;
+              .;ll;'........':okxc.       ,lo;                                          ;c'
+                 ..,;:ccllllc:'.             .'',,,,,,,,,;;;;;;;;;;;;;;.::::::::::::::ll.
 "@
 
 # Display the Splash Page
 Write-Host $splash
+}
 
+function nar {
 # Narrative Introduction
 $narrative = @"
 ### The Murder at Blackwood Manor
@@ -51,35 +55,35 @@ In the opulent yet eerie Blackwood Manor, a lavish dinner party takes a sinister
 
 # Display the narrative
 Write-Host $narrative
+}
 
 # Define suspects, rooms, and weapons
 function def {
-$suspects = @("Colonel Mustard", "Professor Plum", "Miss Scarlet", "Mrs. White", "Mr. Green", "Mrs. Peacock")
-$rooms = @("Library", "Kitchen", "Ballroom", "Conservatory", "Dining Room", "Hall")
-$weapons = @("Candlestick", "Poison", "Lead Pipe", "Revolver", "Rope", "Wrench")
+$global:suspects = @("Colonel Mustard", "Professor Plum", "Miss Scarlet", "Mrs. White", "Mr. Green", "Mrs. Peacock")
+$global:rooms = @("Library", "Kitchen", "Ballroom", "Conservatory", "Dining Room", "Hall")
+$global:weapons = @("Candlestick", "Poison", "Lead Pipe", "Revolver", "Rope", "Wrench")
 }
 # Generate the murder scenario
 function mur {
-$murderSuspect = "Mrs. Peacock"
-$murderRoom = "Library"
-$murderWeapon = "Poison"
+$global:murderSuspect = "Mrs. Peacock"
+$global:murderRoom = "Library"
+$global:murderWeapon = "Poison"
 }
 # Game clues
 function clu {
-$clues = @(
-    "A torn note found in Mr. Blackwood's pocket mentions a hidden family fortune.",
-    "A hidden journal in the safe behind a portrait details a scandal involving an illegitimate child.",
-    "Footprints leading to the library suggest someone was trying to cover their tracks.",
-    "A broken window indicates a struggle, hinting at an insider's betrayal.",
-    "A wine glass with lipstick stains was discovered near the library entrance."
-)
+$global:clues = @{
+    note = "A torn note found in Mr. Blackwood's pocket mentions a hidden family fortune." ;
+    journal = "A hidden journal in the safe behind a portrait details a scandal involving an illegitimate child." ;
+    footprints = "Footprints leading to the library suggest someone was trying to cover their tracks.";
+    window = "A broken window indicates a struggle, hinting at an insider's betrayal.";
+    glass = "A wine glass with lipstick stains was discovered near the library entrance."}
 }
 # Show clues to the player
-Write-Host ($clues -join "`n")
+#Write-Host ($clues.note)
 
 # Randomize Clue Availability
-$availableClues = $clues | Get-Random -Count 3
-Write-Host "Available clues: $availableClues"
+#$availableClues = $clues | Get-Random -Count 3
+#Write-Host "Available clues: $availableClues"
 
 # Initialize attempts and game status
 $attempts = 0
@@ -88,7 +92,7 @@ $gameOver = $false
 # Game loop
 function loo {
 while (-not $gameOver) {
-    Write-Host "What would you like to do? (accuse, interrogate, exit)"
+    Write-Host "What would you like to do? (accuse, interrogate, review, exit)"
     $action = Read-Host
 
     switch ($action.ToLower()) {
@@ -100,8 +104,9 @@ while (-not $gameOver) {
             
             # Check the accusation
             if ($accusedSuspect -eq $murderSuspect -and $accusedRoom -eq $murderRoom -and $accusedWeapon -eq $murderWeapon) {
-                Write-Host "Congratulations! You solved the mystery in $attempts attempts!"
+                Write-Host "`n`nCongratulations! You solved the mystery in $attempts attempts!"
                 $gameOver = $true # Set game status to over
+                end
             } else {
                 Write-Host "Your accusation is incorrect. Try again!"
             }
@@ -132,7 +137,24 @@ while (-not $gameOver) {
                 }
             }
         }
-        
+        'review' {
+            Write-Host "`nSuspect Names:"
+            foreach ($name in $suspects){
+                Write-Host "$name"
+            }
+
+            Write-Host "`nRooms:"
+            foreach ($loc in $rooms){
+                Write-Host "$loc"
+            }
+
+            Write-Host "`nWeapons:"
+            foreach ($item in $weapons){
+                Write-Host "$item"
+            }
+
+            Write-Host "`n"
+        }
         'exit' {
             Write-Host "Thank you for playing!"
             $gameOver = $true # Set game status to over
@@ -143,6 +165,8 @@ while (-not $gameOver) {
     }
 }
 }
+
+function end {
 # Game End Scenario
 Write-Host "As you confront $murderSuspect, they confess to the crime and explain their motive..."
 $narrative2 = @"
@@ -173,6 +197,20 @@ Write-Host $narrative2
 
 #Final Message
 Write-Host "Thanks for playing!"
+}
+
+
+
+function home {
+spl
+nar
+def
+mur
+clu
+loo
+}
+
+home
 
 
 
