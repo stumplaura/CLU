@@ -1,5 +1,4 @@
-
-# Blackwood Mansion Clue Game
+#Blackwood Mansion Clue Game
 #Taylor Metzger, Laura Stump, Scott Ressler, Frentzhermann Solidaire
 #10/16/24
 <#Welcome to a clue inspired game named CLU. Here you will enter a murder mystery world where you will be
