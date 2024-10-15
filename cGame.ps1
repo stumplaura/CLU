@@ -142,7 +142,7 @@ while (-not $gameOver) {
         # List all suspects to interrogation
         2 {
             Write "Suspects:"
-            for ($m = 0; $m -lt 6; $m++){
+            for ($m = 0; $m -lt 8; $m++){
                 $listNum = [int]$m+1
                 $susp = $suspects[$m]
                 Write-Host "($listNum) - $susp"
