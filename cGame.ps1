@@ -68,9 +68,9 @@ $global:weapons = @("Candlestick", "Poison", "Lead Pipe", "Revolver", "Rope", "W
 }
 # Generate the murder scenario
 function mur {
-$global:murderSuspect = "Mrs. Sam"
-$global:murderRoom = "Library"
-$global:murderWeapon = "Poison"
+$global:murderSuspect = "6"
+$global:murderRoom = "1"
+$global:murderWeapon = "2"
 }
 # Game clues
 function clu {
