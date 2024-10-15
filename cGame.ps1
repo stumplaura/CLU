@@ -47,7 +47,7 @@ In the opulent yet eerie Blackwood Manor, a lavish dinner party takes a sinister
 - Former Dr. Gabe: An underground hobby-alchemist known for his potent elixirs.
 
 #### Clues:
-- A torn note found in Mr. Blackwood's pocket mentions a hidden family fortune.
+- A torn note found in Mr. Scott's pocket mentions a hidden family fortune.
 - A hidden journal in the safe behind a portrait details a scandal involving an illegitimate child.
 - Footprints leading to the library suggest someone was trying to cover their tracks.
 - A broken window indicates a struggle, hinting at an insider's betrayal.
@@ -95,12 +95,12 @@ $gameOver = $false
 # Game loop
 function loo {
 while (-not $gameOver) {
-    Write ""
-    Write "Actions:"
-    Write "(1) - Accuse"
-    Write "(2) - Interrogate"
-    Write "(3) - Review"
-    Write "(4) - Exit"
+    #Write ""
+    "Actions:"
+    "(1) - Accuse"
+    "(2) - Interrogate"
+    "(3) - Review"
+    "(4) - Exit"
     Write-Host "What would you like to do?"
     $action = Read-Host
 
