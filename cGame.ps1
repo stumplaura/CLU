@@ -53,16 +53,19 @@ In the opulent yet eerie Blackwood Manor, a lavish dinner party takes a sinister
 Write-Host $narrative
 
 # Define suspects, rooms, and weapons
+function def {
 $suspects = @("Colonel Mustard", "Professor Plum", "Miss Scarlet", "Mrs. White", "Mr. Green", "Mrs. Peacock")
 $rooms = @("Library", "Kitchen", "Ballroom", "Conservatory", "Dining Room", "Hall")
 $weapons = @("Candlestick", "Poison", "Lead Pipe", "Revolver", "Rope", "Wrench")
-
+}
 # Generate the murder scenario
+function mur {
 $murderSuspect = "Mrs. Peacock"
 $murderRoom = "Library"
 $murderWeapon = "Poison"
-
+}
 # Game clues
+function clu {
 $clues = @(
     "A torn note found in Mr. Blackwood's pocket mentions a hidden family fortune.",
     "A hidden journal in the safe behind a portrait details a scandal involving an illegitimate child.",
@@ -70,7 +73,7 @@ $clues = @(
     "A broken window indicates a struggle, hinting at an insider's betrayal.",
     "A wine glass with lipstick stains was discovered near the library entrance."
 )
-
+}
 # Show clues to the player
 Write-Host ($clues -join "`n")
 
@@ -83,6 +86,7 @@ $attempts = 0
 $gameOver = $false
 
 # Game loop
+function loo {
 while (-not $gameOver) {
     Write-Host "What would you like to do? (accuse, interrogate, exit)"
     $action = Read-Host
@@ -138,7 +142,7 @@ while (-not $gameOver) {
         }
     }
 }
-
+}
 # Game End Scenario
 Write-Host "As you confront $murderSuspect, they confess to the crime and explain their motive..."
 $narrative2 = @"
