@@ -108,21 +108,21 @@ while (-not $gameOver) {
         # Prompt user to make accusation
         1 {
             $attempts++
-            Write "Suspects:"
+            "Suspects:"
             for ($i = 0; $i -lt 8; $i++){
                 $listNum = [int]$i+1
                 $susp = $suspects[$i]
                 Write-Host "($listNum) - $susp"
             }
             $accusedSuspect = Read-Host "Who do you think the murderer is?"
-            Write "Rooms:"
+            "Rooms:"
             for ($j = 0; $j -lt 6; $j++){
                 $listNum = [int]$j+1
                 $rm = $rooms[$j]
                 Write-Host "($listNum) - $rm"
             }
             $accusedRoom = Read-Host "Where do you think the murder took place?"
-            Write "Weapons:"
+            "Weapons:"
             for ($k = 0; $k -lt 6; $k++){
                 $listNum = [int]$k+1
                 $weap = $weapons[$k]
@@ -141,7 +141,7 @@ while (-not $gameOver) {
         }
         # List all suspects to interrogation
         2 {
-            Write "Suspects:"
+            "Suspects:"
             for ($m = 0; $m -lt 8; $m++){
                 $listNum = [int]$m+1
                 $susp = $suspects[$m]
