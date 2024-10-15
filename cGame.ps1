@@ -102,6 +102,7 @@ while (-not $gameOver) {
     $action = Read-Host
 
     switch ($action.ToLower()) {
+        # Prompt user to make accusation
         1 {
             $attempts++
             Write "Suspects:"
@@ -135,6 +136,7 @@ while (-not $gameOver) {
                 Write-Host "Your accusation is incorrect. Try again!"
             }
         }
+        # List all suspects to interrogation
         2 {
             Write "Suspects:"
             for ($m = 0; $m -lt 6; $m++){
@@ -142,6 +144,7 @@ while (-not $gameOver) {
                 $susp = $suspects[$m]
                 Write-Host "($listNum) - $susp"
             }
+            # Return corresponding alibi
             $suspect = Read-Host "Which suspect do you want to interrogate?"
             switch ($suspect.ToLower()) {
                 1 {
@@ -167,6 +170,7 @@ while (-not $gameOver) {
                 }
             }
         }
+        # Review option - lists all suspects, rooms, and weapons
         3 {
             Write-Host "`nSuspect Names:"
             foreach ($name in $suspects){
@@ -230,7 +234,7 @@ Write-Host "Thanks for playing!"
 }
 
 
-
+# main function calls
 function home {
 cls
 spl
