@@ -6,6 +6,10 @@ tasked to investigate suspects to solve a murder.#>
 
 function spl {
 $splash = @"
+
+
+
+
                   ..';:cc::;,..        .x;;'''.;,                    .;;;;,            .''''''.
                'codlc;,,,,;:loxxc'     ,d;     xl .               .'kk.;;;.lk,        cx,....,o'
             .:ol,.           ..':xkl.  ,x;     xl .               .'ko.  ..lk,        cO.    'o'
@@ -22,6 +26,11 @@ $splash = @"
             'cc'.              .'lkk;   ,ol'           .......................;Ox;O:      ,c;
               .;ll;'........':okxc.       ,lo;                                          ;c'
                  ..,;:ccllllc:'.             .'',,,,,,,,,;;;;;;;;;;;;;;.::::::::::::::ll.
+
+
+
+
+
 "@
 
 # Display the Splash Page
@@ -42,7 +51,7 @@ In the opulent yet eerie Blackwood Manor, a lavish dinner party takes a sinister
 - Colonel Jack: A retired military officer with a fiery temper and a shadowy past.
 - Mrs. Sam: A wealthy widow skilled in manipulation, she harbors secrets that could change everything.
 - Mr. Neb: A charming businessman whose smooth demeanor masks a web of deceit.
-- Dr. Pavan: A chemist who dedicates his lifes work to recerational distillary.
+- Dr. Pavan: A chemist who dedicates his lifes work to recreational distillary.
 - Former Dr. Gabe: An underground hobby-alchemist known for his potent elixirs.
 
 #### Clues:
@@ -135,7 +144,7 @@ while (-not $gameOver) {
                 $gameOver = $true # Set game status to over
                 end
             } else {
-                Write-Host "Your accusation is incorrect. Try again!"
+                Write-Host "`n`nYour accusation is incorrect. Try again!`n"
             }
         }
         # List all suspects to interrogation
@@ -150,31 +159,31 @@ while (-not $gameOver) {
             $suspect = Read-Host "Which suspect do you want to interrogate?"
             switch ($suspect.ToLower()) {
                 1 {
-                    Write-Host "Colonel Jack claims he was attending a dinner party."
+                    Write-Host "`nColonel Jack claims he was attending a dinner party.`n"
                 }
                 2 {
-                    Write-Host "Professor Kevin asserts he was lost in thought in the library."
+                    Write-Host "`nProfessor Kevin asserts he was lost in thought in the library.`n"
                 }
                 3 {
-                    Write-Host "Miss Morgan insists she was rehearsing lines for a play."
+                    Write-Host "`nMiss Morgan insists she was rehearsing lines for a play.`n"
                 }
                 4 {
-                    Write-Host "Mr. John George states he was organizing the pantry."
+                    Write-Host "`nMr. John George states he was organizing the pantry.`n"
                 }
                 5 {
-                    Write-Host "Mr. Neb says he was watering the plants in the atrium."
+                    Write-Host "`nMr. Neb says he was watering the plants in the atrium.`n"
                 }
                 6 {
-                    Write-Host "Mrs. Sam claims she was at a charity meeting, but her eyes dart nervously."
+                    Write-Host "`nMrs. Sam claims she was at a charity meeting, but her eyes dart nervously.`n"
                 }
                 7 {
-                    Write-Host "Dr. Pavan states he was reading in the laboratory."
+                    Write-Host "`nDr. Pavan states he was searching for a misplaced dangerous chemical in the laboratory.`n"
                 }
                 8 {
-                    Write-Host "Former Dr. Gabe insists he was pouring himself another drink in the kitchen."
+                    Write-Host "`nFormer Dr. Gabe insists he was pouring himself another drink in the kitchen.`n"
                 }
                 default {
-                    Write-Host "Invalid suspect."
+                    Write-Host "`nInvalid suspect.`n"
                 }
             }
         }
@@ -223,7 +232,7 @@ Connections:
    investigation.
 
 The Poison:
-   - The rare poison found in Professor Kevin's study connects to Mrs. Sam as well. As a wealthy widow with means, 
+   - The dangerous chemical missing from the laboratory connects to Mrs. Sam as well. As a wealthy widow with means, 
    she could have easily acquired it and used it discreetly during the dinner.
 
 Behavior and Opportunity:
